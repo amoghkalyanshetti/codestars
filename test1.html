@@ -1,0 +1,151 @@
+<!--login.html-->
+<html>
+<head>
+<<link rel="stylesheet" href="styles/style1.css" media="all" /> 
+</style>
+<script type="text/javascript">
+	function validate() 
+{ 
+  var f=true;
+	{
+
+
+	if(document.myForm.firstname.value == "")
+	{
+	 alert( "Please provide your firstname" ); 
+     document.myForm.firstname.focus() ; 
+     f=false;
+     return f; 
+	}
+
+	if(document.myForm.lastname.value == "")
+	{
+		alert( "Please enter your lastname" ); 
+     	document.myForm.lastname.focus() ; 
+     	f=false;
+     return f;  
+
+	}
+
+
+		if(document.myForm.email.value == "")
+	{
+		alert( "Please enter your email" ); 
+     	document.myForm.email.focus() ; 
+     	f=false;
+     return f; 
+
+	}
+	//validate email
+   var emailID = document.myForm.email.value; 
+   atpos = emailID.indexOf("@"); 
+   dotpos = emailID.lastIndexOf("."); 
+   if (atpos < 1 || ( dotpos - atpos < 2 ))  
+   { 
+       alert("Please enter correct email ID") 
+       document.myForm.email.focus() ; 
+       f=false;
+     return f;  
+   } 
+  // return( true ); 
+	}
+
+	if(document.myForm.pass.value == "")
+	{
+		alert( "Please enter your password" ); 
+     	document.myForm.pass.focus() ; 
+     	f=false;
+     return f;  
+
+	}
+
+	if(document.myForm.pass1.value == "")
+	{
+		alert( "Please confirm password" ); 
+     	document.myForm.pass1.focus() ; 
+     	f=false;
+     return f; 
+
+	}
+  else
+    return true;
+
+} 
+</script>
+</head>
+<body>
+<div class="nav">
+<table>
+<tr>
+<td colspan="2"><img src="logo.png"></td>
+</tr>
+<tr height="50">
+<td width="100"></td>
+<td>
+</td>
+</tr>
+<tr>
+<td width="150"></td>
+<td>
+<ul>
+<li><a href="index.html">Home</a></li>
+  <li><a href="c_main.html">Tutorials</a></li>
+  <li><a href="codeit.html">Code It</a></li>
+  <li><a href="login.html">Login</a></li>
+  <li><a href="signup.html">SignUp</a></li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<h1>Sign Up for CodeStars</h1>
+<h2>Where Coding becomes art</h2>
+<form name="myForm"   
+          onsubmit="return(validate());">
+<fieldset>
+<legend>Sign Up</legend>
+First Name
+
+
+<input type="text" name="firstname" id="first name" maxlength="60"/>
+
+
+Last Name:
+
+<input type="text" name="lastname" id="last name" maxlength="60"/>
+<br><br>
+Email id:
+<input type="text" name="email" id="email" maxlength="120"/>
+<br><br>
+
+Gender
+<input type="radio" name="Gender" id="Gender" value="male">
+Male
+
+<input type="radio" name="Gender" id="Gender" value="male"/>
+Female
+<br>
+<br>
+
+Birth Date :	<input type="date" name="bdate" value="12/06/1997">
+<br>
+<br>
+
+Enter a password
+
+<input type="password" name="pass" id="pass" maxlength="12">
+<br>
+<br>
+
+Confirm password
+<input type="password" name="pass1" id="pass1" maxlength="12">
+<br>
+<br>
+
+<a href="banner.html"><input type="submit" value="submit" name="submit" id="s"/></a>
+
+<input type="reset" value="reset form" name="resetButton id="r"/>
+</fieldset>
+</form>
+</body>
+</html>
